@@ -1,8 +1,10 @@
 ## instrucciones de instalacion
 
-1.- Crear una base de datos
+1.-Clonar el repositorio.
 
-2.- Modificar el archivo .env las sigueintes lineas, el app url y la base de datos
+2.- Crear una base de datos
+
+3.- Modificar el archivo .env las sigueintes lineas, el app url y la base de datos
      
 APP_URL=http://localhost:8000
 
@@ -13,11 +15,11 @@ DB_DATABASE=poder_judi
 DB_USERNAME=root
 DB_PASSWORD=
 
-3.- Ejecutar: composer install
-4.- Ejecutar: npm install
-5.- Ejecutar: php artisan db:seed --class=UserSeeder
-6.- Ejecutar: php artisan db:seed --class=Products
-7.- Ejecutar: php artisan serve
+4.- Ejecutar: composer install
+5.- Ejecutar: npm install
+6.- Ejecutar: php artisan db:seed --class=UserSeeder
+7.- Ejecutar: php artisan db:seed --class=Products
+8.- Ejecutar: php artisan serve
 
 
 ############# menu url 
