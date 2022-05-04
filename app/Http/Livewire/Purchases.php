@@ -28,7 +28,20 @@ class Purchases extends Component
             'valueClass'=>'',
             'filter'=>true
         ],
-       
+
+
+        [
+            'field'=>'product_name',
+            'label'=>'Name',
+            'locale_label'=>true,
+            'editable'=>true,
+            'creatable'=>true,
+            'show'=>true,
+            'thClass'=>'',
+            'valueClass'=>'',
+            'filter'=>true
+        ],
+      
 
         [
             'field'=>'price',
