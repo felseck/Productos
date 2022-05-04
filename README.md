@@ -34,3 +34,4 @@
 ### 3.- products en http://127.0.0.1:8000/products
 ### 4.- purchases en http://127.0.0.1:8000/purchases
 ### 5.- invoices en http://127.0.0.1:8000/invoices
+### 6.- purchase from http://127.0.0.1:8000/purchase-form
