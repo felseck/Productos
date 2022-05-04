@@ -22,6 +22,10 @@
 ### 8.- Ejecutar: php artisan db:seed --class=Products
 ### 9.- Ejecutar: php artisan serve
 
+### 10.- Ingresar como administrador  
+   #### user: admin@fakemail.com
+   #### pwd:  password
+
 
 ## ############ menu url 
 
