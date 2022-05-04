@@ -19,9 +19,13 @@ class PurchaseForm extends Component
         return view('livewire.purchase-form',['products'=>$products]);
     }
 
+    public function updating(){
+        $this->message = '';
+    }
+
     public function purchase()
     {   
-        $this->message = '';
+       
 
         $purchase = new purchase;
 
