@@ -12,5 +12,4 @@
             </div>
         </div>
     </div>
-    @livewire('products')
 </x-app-layout>
