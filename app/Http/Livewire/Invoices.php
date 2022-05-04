@@ -21,8 +21,8 @@ class Invoices extends Component
             'field'=>'id',
             'label'=>'Id',
             'locale_label'=>false,
-            'editable'=>true,
-            'creatable'=>true,
+            'editable'=>false,
+            'creatable'=>false,
             'show'=>true,
             'thClass'=>'',
             'valueClass'=>'',
@@ -160,7 +160,7 @@ class Invoices extends Component
 
    public function createOk(){
       
-       $row = new DefBool;
+       $row = new Invoice;
       
        foreach ($this->creatableFields as $key => $creatableField) {
           $row->{$key} = $creatableField;
@@ -191,7 +191,7 @@ class Invoices extends Component
    }
 
    
-   public function deleteOk(DefBool $model){  //Edit this argument, add Model name
+   public function deleteOk(Invoice $model){  //Edit this argument, add Model name
        
        $model->delete();
 
@@ -214,7 +214,7 @@ class Invoices extends Component
    }
 
    
-   public function editOk(DefBool $model){  //Edit this argument, add Model name
+   public function editOk(Invoice $model){  //Edit this argument, add Model name
       
        foreach ($this->editableFields as $key => $editableField) {
           $model->{$key} = $editableField;

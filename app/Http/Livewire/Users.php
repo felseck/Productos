@@ -21,8 +21,8 @@ class Users extends Component
             'field'=>'id',
             'label'=>'Id',
             'locale_label'=>false,
-            'editable'=>true,
-            'creatable'=>true,
+            'editable'=>false,
+            'creatable'=>false,
             'show'=>true,
             'thClass'=>'',
             'valueClass'=>'',
@@ -45,6 +45,18 @@ class Users extends Component
         [
             'field'=>'email',
             'label'=>'email',
+            'locale_label'=>true,
+            'editable'=>true,
+            'creatable'=>true,
+            'show'=>true,
+            'thClass'=>'',
+            'valueClass'=>'',
+            'filter'=>true
+        ],
+
+        [
+            'field'=>'password',
+            'label'=>'Password',
             'locale_label'=>true,
             'editable'=>true,
             'creatable'=>true,
@@ -136,7 +148,7 @@ class Users extends Component
 
    public function createOk(){
       
-       $row = new DefBool;
+       $row = new User;
       
        foreach ($this->creatableFields as $key => $creatableField) {
           $row->{$key} = $creatableField;
@@ -167,7 +179,7 @@ class Users extends Component
    }
 
    
-   public function deleteOk(DefBool $model){  //Edit this argument, add Model name
+   public function deleteOk(User $model){  //Edit this argument, add Model name
        
        $model->delete();
 
@@ -190,7 +202,7 @@ class Users extends Component
    }
 
    
-   public function editOk(DefBool $model){  //Edit this argument, add Model name
+   public function editOk(User $model){  //Edit this argument, add Model name
       
        foreach ($this->editableFields as $key => $editableField) {
           $model->{$key} = $editableField;
