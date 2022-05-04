@@ -17,9 +17,10 @@ DB_PASSWORD=
 
 ### 4.- Ejecutar: composer install
 ### 5.- Ejecutar: npm install
-### 6.- Ejecutar: php artisan db:seed --class=UserSeeder
-### 7.- Ejecutar: php artisan db:seed --class=Products
-### 8.- Ejecutar: php artisan serve
+### 6.- Ejecutar: php artisan migrate
+### 7.- Ejecutar: php artisan db:seed --class=UserSeeder
+### 8.- Ejecutar: php artisan db:seed --class=Products
+### 9.- Ejecutar: php artisan serve
 
 
 ## ############ menu url 
