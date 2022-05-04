@@ -1,6 +1,8 @@
 <div>
     
+<h1>Purchase form</h1>
 
+<br><br>
 <div>
                   
                                 <label class="block text-sm font-medium mb-1" for="country">Products</label>
