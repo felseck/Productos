@@ -6,14 +6,14 @@
 
 ### 3.- Modificar el archivo .env las sigueintes lineas, el app url y la base de datos
      
-APP_URL=http://localhost:8000
+#### APP_URL=http://localhost:8000
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=poder_judi
-DB_USERNAME=root
-DB_PASSWORD=
+#### DB_CONNECTION=mysql
+#### DB_HOST=127.0.0.1
+#### DB_PORT=3306
+#### DB_DATABASE=poder_judi
+#### DB_USERNAME=root
+#### DB_PASSWORD=
 
 ### 4.- Ejecutar: composer install
 ### 5.- Ejecutar: npm install
