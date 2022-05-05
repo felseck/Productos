@@ -57,7 +57,19 @@ class Purchases extends Component
 
         [
             'field'=>'tax',
-            'label'=>'Tax',
+            'label'=>'Tax %',
+            'locale_label'=>true,
+            'editable'=>true,
+            'creatable'=>true,
+            'show'=>true,
+            'thClass'=>'',
+            'valueClass'=>'',
+            'filter'=>true
+        ],
+
+        [
+            'field'=>'total_tax',
+            'label'=>'Total Tax',
             'locale_label'=>true,
             'editable'=>true,
             'creatable'=>true,

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 use App\Models\Invoice;
 use Livewire\WithPagination;
+use App\Models\Purchase;
 
 use Livewire\Component;
 
@@ -42,7 +43,7 @@ class Invoices extends Component
             'filter'=>true
         ],
 
-        [
+       /* [
             'field'=>'sub_total',
             'label'=>'sub_Total',
             'locale_label'=>true,
@@ -52,10 +53,10 @@ class Invoices extends Component
             'thClass'=>'',
             'valueClass'=>'',
             'filter'=>true
-        ],
+        ],*/
 
         [
-            'field'=>'tax',
+            'field'=>'total_tax',
             'label'=>'Tax',
             'locale_label'=>true,
             'editable'=>true,
@@ -67,8 +68,8 @@ class Invoices extends Component
         ],
 
         [
-            'field'=>'purchase_id',
-            'label'=>'Purchase_id',
+            'field'=>'user_id',
+            'label'=>'user_id',
             'locale_label'=>true,
             'editable'=>true,
             'creatable'=>true,
@@ -223,6 +224,29 @@ class Invoices extends Component
        $model->update();
 
        $this->editRowModal = false;
+   }
+
+
+   
+   public function generate_invoices(){
+    $purchases = Purchase::where(['invoice_id'=>null])->orderBy('user_id', 'desc')->selectRaw("SUM(total_tax) as total_tax")->selectRaw("SUM(price) as total, user_id")->groupBy('user_id')->get();
+     
+    
+     foreach($purchases as $key=>$purchase){
+           $invoice = new Invoice;
+           $invoice->user_id = $purchase->user_id;
+           $invoice->total = $purchase->total;
+           $invoice->total_tax = $purchase->total_tax;
+           $invoice->sub_total = 0;
+           $invoice->save();
+           
+
+           $user_purchases = Purchase::where(['user_id'=>$purchase->user_id]);
+
+           $user_purchases->update(['invoice_id'=>$invoice->id]);
+           
+     }
+
    }
    
 

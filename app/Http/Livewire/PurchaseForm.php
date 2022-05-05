@@ -36,6 +36,7 @@ class PurchaseForm extends Component
         $purchase->product_name = $product->name;
         $purchase->price = $product->price;
         $purchase->tax = $product->tax;
+        $purchase->total_tax = ($product->price*$product->tax)/100;
         $purchase->user_id = $user->id;
         $purchase->product_id = $this->product_id;
 
