@@ -67,7 +67,12 @@
                                  </th>
                                  @endif
                               @endforeach  
+                  
                               
+                              <th>
+                                Client
+</th>
+
                               <th>
                                  Products
 </th>
@@ -141,6 +146,14 @@
                                     
                                     @endif
                                  @endforeach
+
+
+                                 <td>
+
+{{$row->user()->name}}
+
+</td>
+
 
                                  <td>
 

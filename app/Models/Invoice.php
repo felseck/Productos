@@ -15,4 +15,10 @@ class Invoice extends Model
         return $this->hasMany(Purchase::class)->where('invoice_id', '=',$this->id);
     }
 
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id','user_id')->first();
+    }
+
 }
