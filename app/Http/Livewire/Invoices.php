@@ -118,6 +118,8 @@ class Invoices extends Component
 
         $rows = $rows->paginate(10);
 
+        //dump($rows[0]->purchases()->get());
+
         $this->setEditableFields($rows);
 
         return view('livewire.invoices',[
@@ -241,7 +243,7 @@ class Invoices extends Component
            $invoice->save();
            
 
-           $user_purchases = Purchase::where(['user_id'=>$purchase->user_id]);
+           $user_purchases = Purchase::where(['user_id'=>$purchase->user_id,'invoice_id'=>null]);
 
            $user_purchases->update(['invoice_id'=>$invoice->id]);
            

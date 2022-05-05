@@ -66,7 +66,11 @@
                                     @endif
                                  </th>
                                  @endif
-                              @endforeach                        
+                              @endforeach  
+                              
+                              <th>
+                                 Products
+</th>
                         </tr>
                      </thead>
                      <!-- Table body -->
@@ -137,6 +141,15 @@
                                     
                                     @endif
                                  @endforeach
+
+                                 <td>
+
+                                 @foreach($row->purchases()->get() as $purchase)
+
+                                 {{$purchase->product_name}},
+
+                                 @endforeach
+</td>
                            </tr>
                         
                         @endforeach
