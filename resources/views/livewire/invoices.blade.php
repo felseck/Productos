@@ -70,12 +70,10 @@
                   
                               
                               <th>
-                                Client
-</th>
+                                Details
+                              </th>
 
-                              <th>
-                                 Products
-</th>
+         
                         </tr>
                      </thead>
                      <!-- Table body -->
@@ -150,19 +148,11 @@
 
                                  <td>
 
-{{$row->user()->name}}
+<button class="btn bg-indigo-500 hover:bg-indigo-600 text-white" wire:click="openDetailsModal({{$key}})" >See details</button>
 
 </td>
 
 
-                                 <td>
-
-                                 @foreach($row->purchases()->get() as $purchase)
-
-                                 {{$purchase->product_name}},
-
-                                 @endforeach
-</td>
                            </tr>
                         
                         @endforeach
@@ -270,6 +260,83 @@
             </button>
          </x-slot>
       </x-jet-dialog-modal>
+
+
+      <x-jet-dialog-modal wire:model="detailsRowModal">
+         <x-slot name="title">
+            <h2 class="vk text-gray-800 font-bold im">Invoice {{__('Details') }}</h2>
+         </x-slot>
+         <x-slot name="content">
+         <h2>Client: {{$row->user()->name}}<h2>
+
+
+          <!-- Table -->
+          <div class="overflow-x-auto">
+                  <table class="table-auto w-full">
+                     <!-- Table header -->
+                     <thead class="text-xs font-semibold uppercase text-slate-500 bg-slate-50 border-t border-b border-slate-200">                                   
+                            
+                     <th>
+                              product
+                              </th>
+
+                              <th>
+                              Price
+                              </th>
+
+                              <th>
+                              Tax
+                              </th>
+
+         
+                        </tr>
+                     </thead>
+
+                      <!-- Table body -->
+                      <tbody class="text-sm divide-y divide-slate-200">
+                   
+                          
+
+         @foreach($row->purchases()->get() as $purchase)
+
+         <tr>                             
+                                 <td class="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap w-px">
+                                    <!-- Start -->
+         
+                                 {{$purchase->product_name}}
+</td>
+
+<td class="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap w-px">
+                                    <!-- Start -->
+         
+                                 {{$purchase->price}}
+</td>
+
+<td class="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap w-px">
+                                    <!-- Start -->
+         
+                                 {{$purchase->total_tax}}
+</td>
+
+
+</tr>
+
+                                 @endforeach
+</tbody>
+</table>
+
+</div>
+
+
+         </x-slot>
+         <x-slot name="footer">
+            <button wire:click="$set('detailsRowModal', false)" class="btn border-slate-200 hover:border-slate-300 text-slate-600" wire:loading.attr="disabled">
+            {{ __('Close') }}
+            </button>
+            
+         </x-slot>
+      </x-jet-dialog-modal>
+
    @endif
 
 </div>

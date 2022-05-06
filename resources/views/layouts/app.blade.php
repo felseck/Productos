@@ -23,7 +23,11 @@
 
         <div class="min-h-screen bg-gray-100">
            
+        @auth
 
+@include('navigation-menu')
+
+@endauth
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">

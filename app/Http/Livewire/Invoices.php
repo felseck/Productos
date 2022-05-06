@@ -88,6 +88,7 @@ class Invoices extends Component
     public $deleteRowModal = false;
     public $editRowModal = false;
     public $addRowModal = false;
+    public $detailsRowModal = false;
     
     public $creatableFields = [];
 	public $editableFields = [];
@@ -211,6 +212,13 @@ class Invoices extends Component
        $this->setIndex($index);
 
    }
+
+   public function openDetailsModal($index){
+
+    $this->detailsRowModal = true;
+    $this->setIndex($index);
+
+}
 
     public function editCancel(){
        $this->editRowModal = false;

@@ -39,9 +39,7 @@
                     </a>
                 @endif
 
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
+                <button class="btn bg-indigo-500 hover:bg-indigo-600 text-white">  <span class="hidden xs:block ml-2">Login</span> </button>
             </div>
         </form>
     </x-jet-authentication-card>
