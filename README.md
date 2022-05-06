@@ -29,10 +29,11 @@
 
 ## ############ menu url 
 
-### 1.- hacer login en http://127.0.0.1:8000/login
-### 2.- users en http://127.0.0.1:8000/users
-### 3.- products en http://127.0.0.1:8000/products
-### 4.- purchases en http://127.0.0.1:8000/purchases
-### 5.- invoices en http://127.0.0.1:8000/invoices
-### 6.- purchase form http://127.0.0.1:8000/purchase-form
-### 7.- generate invoices http://127.0.0.1:8000/invoices
+### 1.- user login http://127.0.0.1:8000/login
+### 2.- user register http://127.0.0.1:8000/register
+### 3.- users list http://127.0.0.1:8000/users
+### 4.- products list http://127.0.0.1:8000/products
+### 5.- purchases list http://127.0.0.1:8000/purchases
+### 6.- invoices list http://127.0.0.1:8000/invoices
+### 7.- purchase form http://127.0.0.1:8000/purchase-form
+### 8.- generate invoices http://127.0.0.1:8000/invoices
